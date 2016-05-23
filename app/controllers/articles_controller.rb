@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
    def create
      debugger
      @article = Article.new(article_params) # 接傳入的參數
-     @article.user = User.first # hard code to make sure the article has an user
+     @article.user = current_user # hard code to make sure the article has an user
      if @article.save
        flash[:success] = "Article was successfully created"
        redirect_to article_path(@article)
