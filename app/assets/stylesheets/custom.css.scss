@@ -22,7 +22,7 @@ $navbar-default-bg: black;
 }
 
 .jumbotron {
-  background-image: asset-url('new_cover_page.png');
+  background-image: url("http://www.richivip.com/images/1200x630.png");
   background-size: cover;
   height: 550px;
 }
@@ -95,7 +95,35 @@ footer ul li {
   margin-left: 15px;
 }
 
+.icon{
+  //border: 10px solid ;
+  padding:10px;
+  background: yellow;
+  background-clip: content-box;
+  height: 200px;
+}
 
+.button{
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+}
+
+.step{
+  height: 100px;
+  line-height: 100px;
+  font-weight: bold;
+  font-size:32px;
+  text-align: center;
+}
+
+.description{
+  height: 100px;
+  //line-height: 100px;
+  font-weight: bold;
+  font-size:26px;
+  text-align: center;
+}
 
 
 
