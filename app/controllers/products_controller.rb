@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  before_action :set_product, only: [:edit, :update, :show, :destroy]
+
   def index
     @products = Product.all
   end
@@ -9,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
   end
 
   def create
@@ -24,7 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:success] = "商品更新成功!"
       redirect_to product_path(@product)
@@ -35,17 +37,20 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
     @product.destroy
     flash[:danger] = "商品刪除成功"
     redirect_to products_path
   end
 
   private
+  def set_product
+    @product = Product.find(params[:id])
+  end
   def product_params
     params.require(:product).permit(:name, :price, :amount)
   end
