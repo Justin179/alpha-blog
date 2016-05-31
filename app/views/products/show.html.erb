@@ -1,4 +1,4 @@
-<h1>新增商品資料</h1>
+<h1>商品資料</h1>
 
 <p>
   商品名稱: <%= @product.name %>
@@ -9,3 +9,6 @@
 <p>
   數量: <%= @product.amount %>
 </p>
+
+<%= link_to '修改商品資料', edit_product_path %> | 
+<%= link_to '回商品首頁', products_path %>

@@ -1,4 +1,4 @@
-<h1>新增商品</h1>
+<h1>編輯商品</h1>
 
 <% if @product.errors.any? %>
 <h2>新增失敗，錯誤訊息</h2>
@@ -23,7 +23,7 @@
     <%= f.number_field :amount %><br/>
   </p>
   <p>
-    <%= f.submit '新增' %>
+    <%= f.submit '修改' %>
   </p>
 <% end %>
 
