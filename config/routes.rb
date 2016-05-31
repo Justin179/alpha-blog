@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   resources :articles
+  resources :orders
+  resources :products
 
   get 'signup', to: 'users#new'
   #post 'users', to: 'users#create'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+
+  resources :categories, except: [:destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

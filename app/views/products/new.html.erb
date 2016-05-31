@@ -1,0 +1,28 @@
+<h1>新增商品</h1>
+
+<% if @product.errors.any? %>
+<h2>新增失敗，錯誤訊息</h2>
+<ul>
+  <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @product do |f| %>
+  <p>
+    <%= f.label :商品名稱 %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :價格 %><br/>
+    <%= f.number_field :price %><br/>
+  </p>
+  <p>
+    <%= f.label :數量 %><br/>
+    <%= f.number_field :amount %><br/>
+  </p>
+  <p>
+    <%= f.submit '新增' %>
+  </p>
+<% end %>
