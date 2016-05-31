@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
   end
-  
+
   def new
     @product = Product.new
   end
@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      flash[:success] = "商品資訊更新成功!"
+      flash[:success] = "商品更新成功!"
       redirect_to product_path(@product)
     else
       render 'edit'
@@ -40,9 +40,11 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-
+    @product.destroy
+    flash[:danger] = "商品刪除成功"
+    redirect_to products_path
   end
-  
+
   private
   def product_params
     params.require(:product).permit(:name, :price, :amount)

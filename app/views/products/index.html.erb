@@ -1,7 +1,7 @@
 <h1>全部商品資料</h1>
 <p>
   <%= link_to '新增商品', new_product_path %>
-</p>  
+</p>
 <table class="table table-striped">
   <tr>
     <th>商品名稱</th>
@@ -17,7 +17,7 @@
     <td>
       <%= link_to '修改', edit_product_path(product) %> |
       <%= link_to '查詢', product_path(product) %> |
-      <%= link_to '刪除', product_path(product), method: :delete %>
+      <%= link_to '刪除', product_path(product), method: :delete, data: {confirm: "確定要刪除 #{product.name}?"} %>
     </td>
   </tr>
   <% end %>
