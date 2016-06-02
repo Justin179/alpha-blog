@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   resources :articles
-  resources :orders
+  resources :orders, except: [:destroy]
   resources :products
 
   get 'signup', to: 'users#new'
