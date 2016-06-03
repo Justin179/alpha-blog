@@ -9,6 +9,9 @@
 <p>
   數量: <%= @product.amount %>
 </p>
+<p>
+  <%= image_tag @product.image.url(:medium) %>
+</p>
 
-<%= link_to '修改商品資料', edit_product_path %> | 
+<%= link_to '修改商品資料', edit_product_path %> |
 <%= link_to '回商品首頁', products_path %>

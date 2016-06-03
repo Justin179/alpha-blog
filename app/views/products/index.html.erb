@@ -16,7 +16,7 @@
     <td><%= product.amount %></td>
     <td>
       <%= link_to '修改', edit_product_path(product) %> |
-      <%= link_to '查詢', product_path(product) %> |
+      <%= link_to '圖片', product_path(product) %> |
       <%= link_to '刪除', product_path(product), method: :delete, data: {confirm: "確定要刪除 #{product.name}?"} %>
     </td>
   </tr>

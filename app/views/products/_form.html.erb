@@ -7,7 +7,7 @@
 </ul>
 <% end %>
 
-<%= form_for @product do |f| %>
+<%= form_for @product, html: { multipart: true } do |f| %>
   <p>
     <%= f.label :商品名稱 %><br/>
     <%= f.text_field :name %>
@@ -19,6 +19,10 @@
   <p>
     <%= f.label :數量 %><br/>
     <%= f.number_field :amount %><br/>
+  </p>
+  <p>
+    <%= f.label :上傳圖片 %><br/>
+    <%= f.file_field :image %><br/>
   </p>
   <p>
     <%= f.submit '儲存' %>
