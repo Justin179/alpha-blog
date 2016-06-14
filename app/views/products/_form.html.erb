@@ -21,6 +21,10 @@
     <%= f.number_field :amount %><br/>
   </p>
   <p>
+    <%= f.label :類別 %><br/>
+    <%= f.collection_select :sort_id, Sort.all, :id, :name %><br/>
+  </p>
+  <p>
     <%= f.label :上傳圖片 %><br/>
     <%= f.file_field :image %><br/>
   </p>
