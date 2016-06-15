@@ -1,0 +1,21 @@
+<h1 align="center"><%= @sort.name %></h1>
+<p>
+  <%= link_to '全部類別', sorts_path %>
+</p>
+<table class="table table-striped">
+  <tr>
+    <th>商品名稱</th>
+    <th></th>
+    <th>價格</th>
+    <th>數量</th>
+  </tr>
+  <% @sort_products.each do |product| %>
+  <tr id="vertical_center">
+    <td><%= product.name %></td>
+    <td><%= image_tag product.image.url(:thumb) %></td>
+    <td><%= product.price %></td>
+    <td><%= product.amount %></td>
+  </tr>
+  <% end %>
+</table>
+

@@ -19,6 +19,10 @@
         <li><% link_to "Articles", articles_path %></li>
         <li><%= link_to "使用者", users_path %></li>
         <li><%= link_to "商品管理", products_path %></li>
+        <li><%= link_to "類別管理", sorts_path %></li>
+
+
+
         <% if logged_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>

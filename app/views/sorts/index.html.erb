@@ -1,0 +1,20 @@
+<h1>全部類別</h1>
+<p>
+  <%= link_to '新增類別', new_sort_path %>
+</p>
+<table class="table table-striped">
+  <tr>
+    <th>商品類別</th>
+    <th></th>
+  </tr>
+  <% @sorts.each do |sort| %>
+  <tr>
+    <td><%= sort.name %></td>
+    <td>
+      <%= link_to '修改', edit_sort_path(sort) %> |
+      <%= link_to '品項', sort_path(sort) %> |
+      <%= link_to '刪除', sort_path(sort), method: :delete, data: {confirm: "確定要刪除 #{sort.name}?"} %>
+    </td>
+  </tr>
+  <% end %>
+</table>

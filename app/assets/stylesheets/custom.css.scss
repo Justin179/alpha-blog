@@ -3,6 +3,12 @@ $navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+#vertical_center td{
+    text-align:left;
+    line-height:100px;
+}
+
 #logo {
   float: left;
   font-size: 1.7em;

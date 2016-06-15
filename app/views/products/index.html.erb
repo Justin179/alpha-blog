@@ -1,22 +1,26 @@
-<h1>全部商品資料</h1>
+<h1>全部商品</h1>
 <p>
   <%= link_to '新增商品', new_product_path %>
 </p>
 <table class="table table-striped">
   <tr>
     <th>商品名稱</th>
+    <th></th>
     <th>價格</th>
     <th>數量</th>
+    <th>所屬類別</th>
     <th></th>
   </tr>
   <% @products.each do |product| %>
-  <tr>
+  <tr id="vertical_center">
     <td><%= product.name %></td>
+    <td><%= image_tag product.image.url(:thumb) %></td>
     <td><%= product.price %></td>
     <td><%= product.amount %></td>
+    <td><%= product.sort.name %></td>
     <td>
       <%= link_to '修改', edit_product_path(product) %> |
-      <%= link_to '圖片', product_path(product) %> |
+      <%= link_to '明細', product_path(product) %> |
       <%= link_to '刪除', product_path(product), method: :delete, data: {confirm: "確定要刪除 #{product.name}?"} %>
     </td>
   </tr>
