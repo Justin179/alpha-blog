@@ -68,11 +68,8 @@
               <li><%= link_to "View your profile", user_path(current_user) %></li>
               
               <!-- Add inforamtion items-->
-              <% if @user.books.any?%>
-                <li><%= link_to "Edit your information", new_book_path %></li>
-              <% else %>
-                <li><%= link_to "Create your information", new_book_path %></li>
-              <% end %>
+              <li><%= link_to "Edit your information", new_book_path %></li>
+                
               <li><a href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#">Separated link</a></li>
