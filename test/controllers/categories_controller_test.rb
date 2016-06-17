@@ -5,7 +5,7 @@ class CategoriesControllerTest < ActionController::TestCase
   def setup
     @category = Category.create(name: "sports")
   end
-
+=begin
   test "should get categories index" do
     get :index
     assert_response :success
@@ -20,6 +20,6 @@ class CategoriesControllerTest < ActionController::TestCase
     get(:show, {'id' => @category.id})
     assert_response :success
   end
-
+=end
 
 end

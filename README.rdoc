@@ -1,1 +1,13 @@
-this is the repository for the first alpha-blog app of the complete ruby on rails developer course
+
+
+
+表單檢核不過時，顯示錯誤訊息:
+  app/views/shared/_errors.html.erb
+
+flash messages:
+  app/views/layouts/_messages.html.erb (第一個傳入參數name，是:success, :danger這種東西)
+
+view會用到的方法，寫在:
+  app/helpers/application_helper.rb (例如: gravatar_for )
+  
+controllers共用的方法，寫在ApplicationController
