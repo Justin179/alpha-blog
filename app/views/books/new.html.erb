@@ -18,11 +18,7 @@
       <%= f.text_field :closetime, class: "col-md-8 form_tag" %>
       
       <div class="col-md-10 book_button">
-        <% if @user.books.any? %>
           <%= f.submit "Update contact information", class: "btn btn-primary" %>
-        <% else %>
-          <%= f.submit "Create contact information", class: "btn btn-primary" %>
-        <% end %>
       </div>
       
     <% end %>
