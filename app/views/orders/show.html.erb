@@ -1,0 +1,24 @@
+<h1>訂單明細</h1>
+
+<table class="table table-striped">
+
+  <tr>
+    <th>項目</th>
+    <th>單價</th>
+    <th>數量</th>
+    <th>金額</th>
+  </tr>
+  <% total_amount = 0 %>
+  <% @order.order_details.each do |details| %>
+    <tr id="vertical_center_order">
+      <td><%= details.item %></td>
+      <td><%= details.price %></td>
+      <td><%= details.quantity %></td>
+      <td><%= details.subtotal %></td>
+    </tr>
+    <% total_amount = details.totalamount %>
+  <% end %>
+</table>
+<div class="row">
+  <p><b> 總金額: <%= number_to_currency(total_amount, :unit => 'NTD ') %></b></p>
+</div>

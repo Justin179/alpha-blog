@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :order_details
   get 'cart', to: 'cart#index'
   get 'cart/clear', to: 'cart#clearCart'
   get 'cart/:pId/:uId', to: 'cart#add'
