@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'cart', to: 'cart#index'
+  get 'cart/clear', to: 'cart#clearCart'
+  get 'cart/:id', to: 'cart#add'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
