@@ -5,12 +5,47 @@
     <%= gravatar_for @user, size: 150 %>
   </div>
 </div>
-<h4 align="center"><%= @user.username %>'s articles</h4>
-<div class="center">
+
+<!-- Add books into user's profile-->
+<h3 align="center"><%= @user.username %>'s contact information</h4>
+
+<% if @book.any? %>
+  <div class ='col-md-offset-2'>
+    <% @book.each do |b| %>
+      <div>
+        <div class='col-md-4 book_title'>Phone : </div>
+        <div class='col-md-6 book_title'><%= b.phone %></div>
+      </div>
+      
+      <div>
+        <div class='col-md-4 book_title'>Address : </div>
+        <div class='col-md-6 book_title'><%= b.address %></div>
+      </div>
+      
+      <div>
+        <div class='col-md-4 book_title'>Opentime : </div>
+        <div class='col-md-6 book_title'><%= b.opentime %></div>
+      </div>
+      
+      <div>
+        <div class='col-md-4 book_title'>Closetime : </div>
+        <div class='col-md-6 book_title'><%= b.closetime %></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class='col-md-12 book_description'><%= @user.username %>'s articles </div>
+
+<div class="center description">
   <%= will_paginate @user_articles %>
 </div>
 <%= render 'articles/article', obj: @user_articles %>
 <div class="center">
   <%= will_paginate @user_articles %>
+</div>
+
+<div>
+  
 </div>
 

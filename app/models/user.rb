@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   has_many :articles, dependent: :destroy
   has_many :orders, dependent: :destroy
+  
+  #Add associating with Books table
+  has_many :books, dependent: :destroy
+  
   before_save {self.email = email.downcase }
   validates :username, presence: true,
             uniqueness: {case_sensitive: false},
