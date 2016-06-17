@@ -22,6 +22,8 @@
       <%= link_to '修改', edit_product_path(product) %> |
       <%= link_to '明細', product_path(product) %> |
       <%= link_to '刪除', product_path(product), method: :delete, data: {confirm: "確定要刪除 #{product.name}?"} %>
+      <!-- link to carts#add then redirect to carts#index -->
+      <a href="/cart/<%= product.id %>" > | 加入訂單 (pId:<%= product.id %>)</a>
     </td>
   </tr>
   <% end %>

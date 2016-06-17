@@ -1,5 +1,6 @@
-<h1>商品資料</h1>
 
+<h1 align="center">商品資料</h1>
+<div class="well col-xs-8 col-xs-offset-2">
 <p>
   商品名稱: <%= @product.name %>
 </p>
@@ -16,8 +17,12 @@
   <%= image_tag @product.image.url(:medium) %>
 </p>
 
+<p>
+  <%= @product.description %>
+</p>
+
 <%= link_to '修改商品資料', edit_product_path %> |
 <%= link_to '回商品首頁', products_path %> |
 <%= link_to '新增商品', new_product_path %>
-
+</div>
 
