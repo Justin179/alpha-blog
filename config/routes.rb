@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   get 'cart', to: 'cart#index'
   get 'cart/clear', to: 'cart#clearCart'
-  get 'cart/:id', to: 'cart#add'
+  get 'cart/:pId/:uId', to: 'cart#add'
+
+  # get 'orders/:cId', to: 'orders#new'
+  resources :orders, except: [:destroy,:edit,:update]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -14,11 +17,10 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   resources :articles
-  resources :orders, except: [:destroy]
   resources :products
-  
+
   resources :books, except: [:destroy]
-  
+
   resources :sorts
 
 
