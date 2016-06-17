@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614150610) do
+ActiveRecord::Schema.define(version: 20160617072044) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160614150610) do
     t.datetime "image_updated_at"
     t.integer  "sort_id"
     t.integer  "order_id"
+    t.text     "description"
   end
 
   create_table "sorts", force: :cascade do |t|
