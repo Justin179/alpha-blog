@@ -1,1 +1,25 @@
-I Create a memo for test and sometimes we can leave message here.
+6/17 : Lucsa - Add Edit User Information 的功能，更新完會 show 在 profile 頁面裡。
+
+1.使用者聯絡資訊建立在 'Book' medel，並與 User table 做 association
+
+create_table "books", force: :cascade do |t|
+    t.string   "phone"
+    t.string   "address"
+    t.string   "opentime"
+    t.string   "closetime"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+end
+
+2.新增 view\books\new.html.erb ，做為輸入聯絡資訊的地方
+
+3.routes.rb 新增  resource :books, expect: [:destroy]
+
+4.使用者登入後，_navigate.html.erb 新增 'Update contact information' 選項
+
+5.使用者登入，但尚未建立聯絡資訊時，profile page 不會顯示聯絡資訊。
+
+6.使用者登入，且建立聯絡資訊時，profile page 會顯示聯絡資訊。
+  
+7.使用者登入，且建立聯絡資訊時，再次進入 'Update contact information' 時，會帶出舊有的連絡資訊。
