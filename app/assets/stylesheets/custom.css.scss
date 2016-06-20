@@ -3,6 +3,10 @@ $navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#cart-txt{
+  color: white;
+  margin-top: 10px;
+}
 
 #vertical_center td{
     text-align:left;

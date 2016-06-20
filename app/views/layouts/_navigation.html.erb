@@ -24,7 +24,7 @@
 
 
         <% if logged_in? %>
-          <li class="dropdown">
+          <li class="dropdown hidden">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <!--<li><a href="#">Action</a></li>-->
@@ -38,7 +38,7 @@
             </ul>
           </li>
         <% end %>
-         <li class="dropdown">
+         <li class="dropdown hidden">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to "All Categories", categories_path %></li>
@@ -60,7 +60,11 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+        <li>
+          <%= link_to image_tag("cart-icon.png", size: "20"), cart_path %>
+        </li>
+        <li id="cart-txt"><%= session[:total_items] %></li>
+          <li><%= link_to '登出', logout_path, method: :delete %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile <%= "Admin" if current_user.admin? %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -76,8 +80,8 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to 'Log in', login_path %></li>
-          <li><%= link_to 'Sign up', signup_path %></li>
+          <li><%= link_to '登入', login_path %></li>
+          <li><%= link_to '註冊', signup_path %></li>
         <% end %>
 
       </ul>

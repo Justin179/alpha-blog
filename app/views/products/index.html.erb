@@ -24,7 +24,7 @@
       <%= link_to '明細', product_path(product) %> |
       <%= link_to '刪除', product_path(product), method: :delete, data: {confirm: "確定要刪除 #{product.name}?"} %>
       <!-- link to carts#add then redirect to carts#index -->
-      <a href="/cart/<%= product.id %>/<%= current_user.id %>" > | 加入訂單 (pId:<%= product.id %>,uId:<%= current_user.id %>)</a>
+      <a id="new_link" href="/cart/<%= product.id %>/<%= current_user.id %>"  data-remote="true" > | 加入訂單 (pId:<%= product.id %>,uId:<%= current_user.id %>)</a>
     </td>
   </tr>
   <% end %>
