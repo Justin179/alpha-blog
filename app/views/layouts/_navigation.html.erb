@@ -17,7 +17,7 @@
       <ul class="nav navbar-nav">
         <!--<li><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
         <li><% link_to "Articles", articles_path %></li>
-        <li><%= link_to "使用者 (#{current_user.username})", users_path %></li>
+        <li><%= link_to "使用者 (#{current_user.username if current_user!=nil})", users_path %></li>
         <li><%= link_to "商品管理", products_path %></li>
         <li><%= link_to "類別管理", sorts_path %></li>
         <li><%= link_to "訂單", cart_path %></li>
