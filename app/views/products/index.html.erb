@@ -18,7 +18,7 @@
     <td><%= image_tag product.image.url(:thumb) %></td>
     <td><%= product.price %></td>
     <td><%= product.amount %></td>
-    <td><%= product.sort.name %></td>
+    <td><%= product.sort.name if product.sort!=nil %></td>
     <td>
       <%= link_to '修改', edit_product_path(product) %> |
       <%= link_to '明細', product_path(product) %> |
