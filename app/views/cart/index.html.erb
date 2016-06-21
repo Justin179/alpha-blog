@@ -1,7 +1,7 @@
 <h1>訂單</h1>
 
 <% if @cart.empty? %>
-  <p> Your cart is currently empty </p>
+  <p> 目前訂單沒有商品 </p>
 <% else %>
   <%= link_to '清除訂單', cart_clear_path %>
 <% end %>
@@ -32,9 +32,9 @@
 
 <div class="row">
   <p><b> 總金額: <%= number_to_currency(total, :unit => 'NTD ') %></b></p>
-
-  <%= link_to "確認訂單", orders_path, :method => :post %>
-  
+  <% if session[:total_items] > 0 %>
+    <%= link_to "確認訂單", orders_path, :method => :post %>
+  <% end %>
   <!-- <a href="/orders/10" >確認訂單</a> -->
 </div>
 

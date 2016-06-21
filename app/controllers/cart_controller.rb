@@ -25,6 +25,7 @@ class CartController < ApplicationController
       cart[p_id] = 1
     end
 
+    # 商品數量加總
     @total_items = 0;
     cart.each do | p_id, quantity |
       if (p_id != "uId" && p_id != "total")
@@ -50,11 +51,15 @@ class CartController < ApplicationController
     end
   end
 
+
   def clearCart
     # 找到購物車物件，清空它
     session[:cart] = nil
+    # 商品數量歸零
     session[:total_items] = 0;
     # 導頁到 cart index
-    redirect_to :action => :index
+    # redirect_to :action => :index
+    redirect_to cart_path
   end
+
 end

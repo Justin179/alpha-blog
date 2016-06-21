@@ -34,8 +34,16 @@ class OrdersController < ApplicationController
         end
       end
 
-      #  order GET    /orders/:id(.:format)             orders#show
+      # order GET    /orders/:id(.:format)             orders#show
       flash[:success] = "訂單新增成功"
+
+      # 清空購物車
+      # 找到購物車物件，清空它
+      session[:cart] = nil
+      # 商品數量歸零
+      session[:total_items] = 0;
+
+      # 導頁到訂單明細
       redirect_to order_path(order)
 
     else
